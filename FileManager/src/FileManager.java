@@ -1,5 +1,4 @@
 import java.io.File;
-import java.util.Comparator;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -25,7 +24,6 @@ public class FileManager {
         // you can sort files in many ways, I sort based on file's weight
         Stream.of(Objects.requireNonNull(new File(directory).listFiles()))
                 .filter(File::isFile)
-
                 .sorted((x1, x2) -> Long.compare(x2.length(), x1.length()))
                 .forEach(file -> {
                     System.out.println(file.getName());
@@ -46,7 +44,6 @@ public class FileManager {
     public void listSortedEverything(String directory) {
         // you can sort files in many ways, I sort based on file's weight
         Stream.of(Objects.requireNonNull(new File(directory).listFiles()))
-
                 .sorted((x1, x2) -> Long.compare(x2.length(), x1.length()))
                 .forEach(file -> {
                     System.out.println(file.getName());
